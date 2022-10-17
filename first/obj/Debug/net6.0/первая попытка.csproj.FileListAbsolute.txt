@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\bin\Debug\net6.0\первая попытка.exe
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\bin\Debug\net6.0\первая попытка.deps.json
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\bin\Debug\net6.0\первая попытка.runtimeconfig.json
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\bin\Debug\net6.0\первая попытка.dll
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\bin\Debug\net6.0\первая попытка.pdb
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.AssemblyInfo.cs
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.dll
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\refint\первая попытка.dll
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.pdb
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\первая попытка.genruntimeconfig.cache
+C:\Users\User\Desktop\ГБ пройденное\c#\морской бой\первая попытка\obj\Debug\net6.0\ref\первая попытка.dll
