@@ -187,17 +187,88 @@ void TrafficShip(int[,] field, int i = 5, int j = 5)
             {DownShip(field, i, j); i += 1;}
             if (key == ConsoleKey.Spacebar) TurnShip(field, i, j); 
             if (key == ConsoleKey.Enter && (test = Test(field, i, j)) == true) break;
-            else Console.WriteLine("Impossible to put");
             Console.Clear();
             PrintField(field);
         }
     }
 }
 
+bool TestDieShip (int[,] field, int korI, int korJ)
+{
+    bool testUp = false, testDown = false, testLeft = false, testRight = false;
+    for (int i = korI; i < korI + 5 ; i++)
+    {
+        if (field[i, korJ] == 0 || field[i, korJ] == 2) {testDown = true; break;}
+        if (field[i, korJ] == 1) {testDown = false; break;}
+    }
+    for (int i = korI; i > korI - 5 ; i--)
+    {
+        if (field[i, korJ] == 0 || field[i, korJ] == 2) {testUp = true; break;}
+        if (field[i, korJ] == 1) {testUp = false; break;}
+    }
+    for (int j = korJ; j > korJ - 5 ; j--)
+    {
+        if (field[korI, j] == 0 || field[korI, j] == 2) {testLeft = true; break;}
+        if (field[korI, j] == 1) {testLeft = false; break;}
+    }
+    for (int j = korJ; j < korJ + 5 ; j++)
+    {
+        if (field[korI, j] == 0 || field[korI, j] == 2) {testRight = true; break;}
+        if (field[korI, j] == 1) {testRight = false; break;}
+    }
+    if (testUp == true && testDown == true && testLeft == true && testRight == true) return true;
+    else return false;
+}
+
+void dieShip (int[,] field, int korI, int korJ)
+{
+    for (int i = korI; i < korI + 5 ; i++)
+    {
+        if ( field[i, korJ] == 2 ) {field[i , korJ - 1] = 2; field[i, korJ + 1] = 2; break;}
+        if (field[i, korJ] == -1) 
+            { 
+                if (field[i , korJ + 1 ]  == 0) field[ i, korJ + 1 ]  = 2;
+                if (field[i + 1, korJ ]  == 0) field[i + 1, korJ  ]  = 2;
+                if (field[i , korJ - 1 ]  == 0) field[ i, korJ - 1 ]  = 2;
+            }
+    }
+    for (int i = korI; i > korI - 5 ; i--)
+    {
+        if (field[i, korJ] == 2)  {field[i , korJ - 1] = 2; field[i, korJ + 1] = 2; break;}
+        if (field[i, korJ] == -1) 
+        { 
+            if (field[i , korJ + 1 ]  == 0) field[ i, korJ + 1 ]  = 2;
+            if (field[i - 1, korJ ]  == 0) field[ i - 1, korJ ]  = 2;
+            if (field[i , korJ - 1 ]  == 0) field[ i, korJ - 1 ]  = 2;
+        }
+    }
+    for (int j = korJ; j > korJ - 5 ; j--)
+    {
+        if (field[korI, j] == 2) { field[korI - 1, j] = 2; field[korI + 1, j] = 2; break;}
+        if (field[korI, j] == -1) 
+            {
+                if (field[korI - 1, j  ]  == 0) field[korI - 1, j  ]  = 2;
+                if (field[korI, j - 1 ]  == 0) field[korI , j - 1 ]  = 2;
+                if (field[korI + 1, j  ]  == 0) field[korI + 1, j  ]  = 2;
+            }
+    }
+    for (int j = korJ; j < korJ + 5 ; j++)
+    {
+        if (field[korI, j] == 2) { field[korI - 1, j] = 2; field[korI + 1, j] = 2; break;}
+        if (field[korI, j] == -1) 
+            {
+                if (field[korI - 1, j  ]  == 0) field[korI - 1, j  ]  = 2;
+                if (field[korI, j + 1]  == 0) field[korI , j + 1 ]  = 2;
+                if (field[korI + 1, j  ]  == 0) field[korI + 1, j ]  = 2;
+            }
+    }
+}
 
 void Play(int[,] field, int i = 6, int j = 5, int n = 20, int m = 12 )
 {
     PrintFieldGame(field);
+    if (player == true) Console.WriteLine("Player first ");
+    if (player == false)Console.WriteLine("Player second ");
     while(true)
         {
             Console.SetCursorPosition( n, m );
@@ -215,7 +286,8 @@ void Play(int[,] field, int i = 6, int j = 5, int n = 20, int m = 12 )
                         field[i, j] = -1;
                         if (player == true) countOne++;
                         if (player == false) countTwo++;
-                        break;
+                        bool test = TestDieShip (field, i, j);
+                        if (test == true)  dieShip (field, i, j);
                     }
                 }
             
@@ -227,6 +299,7 @@ void Play(int[,] field, int i = 6, int j = 5, int n = 20, int m = 12 )
 Console.WriteLine("Player first ");
 TrafficShip(fieldPlayerOne);
 Console.Clear();
+
 Console.WriteLine("Player second ");
 countFourDeck = 1;  countThreeDeck = 2;  countTwoDeck = 3;  countOneDeck = 4;
 TrafficShip(fieldPlayerTwo);

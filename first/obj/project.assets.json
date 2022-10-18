@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\первая попытка\\первая попытка.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\first\\первая попытка.csproj",
       "projectName": "первая попытка",
-      "projectPath": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\первая попытка\\первая попытка.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\first\\первая попытка.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\первая попытка\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\ГБ пройденное\\c#\\морской бой\\first\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
