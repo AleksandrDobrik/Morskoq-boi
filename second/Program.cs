@@ -160,11 +160,12 @@ void DieShip (int[,] field, int korI, int korJ)
 void Play(int[,] field, int i = 6, int j = 5, int n = 20, int m = 12 )
 {
     begin = true;
+    Console.Clear();
+    PrintField(field);
+    if (player) Console.WriteLine("Player first ");
+        else Console.WriteLine("Player second ");
     while(true)
     {
-        PrintField(field);
-        if (player) Console.WriteLine("Player first ");
-        else Console.WriteLine("Player second ");
         Console.SetCursorPosition( n, m );
         var key = Console.ReadKey(true).Key;
         if (key == ConsoleKey.LeftArrow && j > 1) {  n -= 4; j -= 1;} 
@@ -182,13 +183,11 @@ void Play(int[,] field, int i = 6, int j = 5, int n = 20, int m = 12 )
                     DieShip (field, i, j);
                 }
             }
-        Console.Clear();
     }
 }
 TrafficShip(fieldPlayerOne);
-countShip = 0; player = !player;
+countShip = 0; 
 TrafficShip(fieldPlayerTwo);
-player = !player;
 while (countOne < 20 && countTwo < 20)
 {
     Console.Clear();
